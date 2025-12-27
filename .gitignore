@@ -8,7 +8,6 @@ env.bak/
 venv.bak/
 
 /venv
-projeto-config.txt
 
 **/__pycache__
 **/.pytest_cache

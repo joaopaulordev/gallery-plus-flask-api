@@ -1,0 +1,107 @@
+pytest tests.py -v
+pytest -s -v src\drivers\password_handler_test.py
+pytest -s -v
+
+flask shell
+db.create_all()
+db.drop_all()
+db.session
+db.session.commit()
+user = User(username="admin", password="123")
+user.username
+db.session.add(user)
+db.session.commit()
+
+---------------------Ambiente virtual-------------------------------------------
+pip install virtualenv
+python -m venv venv
+.\venv\Scripts\activate
+
+pip install pylint
+pylint --generate-rcfile > .pylintrc
+pylint src/controllers/person_finder_controller.py
+
+pip install pre-commit
+pre-commit install
+
+pip install Flask
+pip install SQLAlchemy
+pip install pytest
+pip install pytest-mock
+pip install pydantic
+pip install Flask-Cors==4.0.0
+
+
+pip freeze > requirements.txt
+pip install pip --upgrade
+pip install -r requirements.txt
+
+
+---------------------Configurando Git-------------------------------------------
+git clone https://github.com/joaopaulordev/Prj-Daily-Diet-API.git
+git init
+git log
+git status
+git add .
+git commit -m "Implemented everything" --no-verify
+
+git branch -M main
+git remote add origin https://github.com/joaopaulordev/gallery-plus-flask-api.git
+git push -u origin main
+git push -f origin main
+git pull origin main
+---------
+git remote
+git remote rm origin
+git fetch origin main
+---------
+git config --global user.email "joaopaulo.dev@hotmail.com"
+git config --global user.name "João Paulo Rodrigues"
+
+git status
+git add .
+git commit -m "trying migrations"
+git push origin main
+
+-------------------Dockerfile - Docker-compose ---------------------------------
+docker-compose up --build
+docker-compose up --build --force-recreate
+docker-compose up -d
+docker-compose down
+
+docker start django-docker
+docker stop django-docker
+docker rm xxx xxx
+docker ps -a
+
+docker image ls
+docker image rm xxx
+docker rmi xxx
+
+
+
+docker exec -it sample-flask-auth-db-1 mysql -uroot -p
+SHOW GRANTS FOR 'Joao Paulo'@'172.18.0.1';
+CREATE USER 'Joao Paulo'@'172.18.0.1' IDENTIFIED BY 'admin123';
+GRANT ALL PRIVILEGES ON *.* TO 'Joao Paulo'@'172.18.0.1' WITH GRANT OPTION;
+flush privileges; 
+exit
+
+docker exec -it sample-flask-auth-db-1 mysql -u root -p 
+SELECT User, Host FROM mysql.user;
+SHOW DATABASES;
+USE flask-api-crud;
+CREATE USER 'admin'@'127.0.0.1' IDENTIFIED BY 'admin123';
+GRANT ALL PRIVILEGES ON `flask-api-crud` TO 'admin'@'127.0.0.1';
+FLUSH PRIVILEGES;  --- reload all the privileges
+
+DROP USER 'root'@'localhost';
+
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION; 
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'admin123';
+
+FLUSH PRIVILEGES;
+
